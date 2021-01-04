@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+int dodawanie ( int a, int b ) ;
+int odejmowanie ( int a, int b ) ;
+int mnozenie ( int a, int b ) ;
+double dzielenie ( int a, int b, char* s ) ;
+
+int main ( int argc, char *argv[] ) {
+	int a, b;
+	
+	printf ( "Podaj 2 liczby:\n" ) ;
+	scanf ( "%d %d", &a, &b ) ;
+
+	int x = dodawanie ( a , b ) ;
+	printf ( "a + b = %d\n", x  ) ;
+	
+	int x = odejmowanie ( a , b ) ;
+	printf ( "a - b = %d\n", x  ) ;
+	
+	int x = mnozenie ( a , b ) ;
+	printf ( "a * b = %d\n", x  ) ;
+	
+	double y =  dzielenie ( a, b, argv[0] );
+	printf ( "a / b = %lf\n", y ) ;
+
+	
+	return 0;
+}
+
+
+int dodawanie ( int a, int b ) {
+	return a + b;
+}
+
+int odejmowanie ( int a, int b ) {
+	return a - b;
+}
+
+int mnozenie ( int a, int b ) {
+	return a * b;
+}
+
+double dzielenie ( int a, int b, char* e ) {
+	if ( b == 0 ) {
+		printf ( stderr, "Dzielenie przez zero w programie %s", e ) ;
+		return 0.;
+	}
+	else
+		return a / b;
+}
+
+
+
+
